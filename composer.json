@@ -1,0 +1,10 @@
+{
+    "require": {
+        "illuminate/database": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "commandeApp\\" : "src/commandeApp/"
+        }
+    }
+}
