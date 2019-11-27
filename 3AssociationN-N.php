@@ -31,4 +31,15 @@ $commande1 =  \commandeApp\model\commande::where("nom_client", "=", "Aaron McGly
 
 /*echo $commande1; */
 
-/*$commande3 = \commandeApp\model\commande::where("id", "=", "cccc-cccc-5570");*/
+/*question 4*/
+
+$commande3 = \commandeApp\model\commande::where("id", "=", "cccc-cccc-5570")->first();
+
+/*$commande3->items()->attach(\commandeApp\model\item::find(2),["quantite"=>3]);
+$commande3->items()->attach(\commandeApp\model\item::find(6),["quantite"=>4]);*/
+
+/*question 5*/
+
+$commande3->items()->attach(\commandeApp\model\item::find(6),["quantite"=>6]);
+$commande3->save();
+
