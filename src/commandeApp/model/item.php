@@ -10,4 +10,9 @@ class item extends \Illuminate\Database\Eloquent\Model
                                       les deux colonnes updated_at,
                                       created_at */
 
+    public function commandeItem(){
+
+        return $this->belongsToMany("commandeApp\model\commande","item_commande","item_id","commande_id");
+    }
+
 }
