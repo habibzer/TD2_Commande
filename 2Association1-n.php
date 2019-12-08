@@ -16,9 +16,9 @@ $db->setAsGlobal();            /* rendre la connexion visible dans tout le proje
 $db->bootEloquent();           /* établir la connexion */
 
 /*question 1*/
-$carte = \commandeApp\model\Carte::find(42);
+$carte = \commandeApp\model\Carte::where("id","=",42)->with("commandes")->get();
 
-/*echo $carte->commandes()->get();*/
+/*echo $carte;*/
 
 /*question 2*/
 
