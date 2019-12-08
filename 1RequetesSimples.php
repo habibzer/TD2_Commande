@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFoundExceptio
 /* pour le chargement automatique des classes d'Eloquent (dans le répertoire vendor) */
 require_once 'vendor/autoload.php';
 
+
 $config = parse_ini_file('conf/config.ini');
 
 /* une instance de connexion  */
@@ -14,9 +15,11 @@ $db->addConnection( $config ); /* configuration avec nos paramètres */
 $db->setAsGlobal();            /* rendre la connexion visible dans tout le projet */
 $db->bootEloquent();           /* établir la connexion */
 
+
+use commandeApp\model\Carte as Carte;
 /*question 1*/
 
-        $requet1 = \commandeApp\model\Carte::select("nom_proprietaire", "mail_proprietaire", "cumul")->get();
+        $requet1 = Carte::select("nom_proprietaire", "mail_proprietaire", "cumul")->get();
 
         /*echo $requet1;*/
 

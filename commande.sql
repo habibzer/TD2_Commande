@@ -1708,8 +1708,8 @@ INSERT INTO `item` (`id`, `libelle`, `description`, `tarif`) VALUES
 (6,	'eau gazeuse',	'bouteille 50cl - bahdoua',	1.20),
 (7,	'cola 0%',	'cola caco Zéro',	1.50);
 
-DROP TABLE IF EXISTS `paiement`;
-CREATE TABLE `paiement` (
+DROP TABLE IF EXISTS `item_commande`;
+CREATE TABLE `item_commande` (
   `item_id` int(11) NOT NULL,
   `commande_id` varchar(48) NOT NULL,
   `quantite` tinyint(4) NOT NULL,
@@ -1717,7 +1717,7 @@ CREATE TABLE `paiement` (
   CONSTRAINT `item_commande_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `item` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `paiement` (`item_id`, `commande_id`, `quantite`) VALUES
+INSERT INTO `item_commande` (`item_id`, `commande_id`, `quantite`) VALUES
 (1,	'9e0bdcd5-ee6f-4907-a96d-b67b1cefc20c',	4),
 (7,	'621b860e-c16c-45dc-a5c6-141260e0586f',	3),
 (1,	'621b860e-c16c-45dc-a5c6-141260e0586f',	1),

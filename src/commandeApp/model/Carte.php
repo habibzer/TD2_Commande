@@ -15,4 +15,5 @@ class Carte extends \Illuminate\Database\Eloquent\Model
 
         return $this->hasMany('commandeApp\model\commande', 'carte_id');
     }
+
 }

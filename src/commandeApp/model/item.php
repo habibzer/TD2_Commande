@@ -1,8 +1,9 @@
 <?php
 namespace commandeApp\model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class item extends \Illuminate\Database\Eloquent\Model
 {
+    use SoftDeletes;
 
     protected $table      = 'item';  /* le nom de la table */
     protected $primaryKey = 'id';     /* le nom de la clé primaire */
